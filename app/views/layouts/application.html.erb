@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Kurobook</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Kurobook</title>
+    <link href='https://fonts.googleapis.com/css?family=Limelight' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-header">
+          <%= link_to 'Kurobook', root_url, class: "navbar-brand" %>
+        </div>
+        <div class="navbar-right">
+          <ul class="menu-list">
+            <li><%= link_to 'プロフィール', '' %></li>
+            <li><%= link_to 'お友だち','' %></li>
+            <li><%= link_to 'やること帳','' %></li>
+            <li><%= link_to '教えて広場','' %></li>
+            <li><%= link_to 'お問い合わせ','' %></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="main-container">
+      <%= yield %>
+    </div>
+  </body>
 </html>
