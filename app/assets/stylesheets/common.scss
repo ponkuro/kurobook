@@ -1,14 +1,27 @@
 body {
     width: 100%;
     background-color: #e6eae6;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
 }
 
 .main-container {
+    @media screen and (max-width:767px) { 
+        top: 30px;
+    }
+    @media screen and (min-width:768px) and (max-width:991px) { 
+        top: 40px;
+    }
+    @media screen and (min-width:992px) {
+        top: 50px;
+    }
     position: absolute;
-    top: 50px;
     width: 100%;
     margin: 0;
     padding: 0;
+}
+
+i {
+    font-family: FontAwesome;;
 }

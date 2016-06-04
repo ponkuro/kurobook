@@ -1,0 +1,81 @@
+.regist-container {
+    @media screen and (max-width:767px) { 
+        padding: 5px 0 20px 0;
+    }
+    @media screen and (min-width:768px) and ( max-width:991px) {
+        padding: 30px 0;
+    }
+    @media screen and (min-width:992px) {
+        padding: 35px 0;
+    }
+    text-align: center;
+    overflow: scroll;
+}
+
+form.new_user, .regist-social_signup {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto 30px auto;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    border-radius: 10px;
+    padding: 10px 0 25px 0;
+    h3 {
+        font-size: 1.2em;
+    }
+}
+
+input.form_field {
+    width: 85%;
+    border: solid 1px #aaaaaa;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+div.form_field {
+    width: 85%;
+    margin-bottom: 20px;
+}
+
+input.form_submit {
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 12px;
+    background: -webkit-linear-gradient(#ffa443, #ff7400);
+    background: -moz-linear-gradient(#ffa443, #ff7400);
+    background: -o-linear-gradient(#ffa443, #ff7400);
+    background: -ms-linear-gradient(#ffa443, #ff7400);
+    background: linear-gradient(#ffa443, #ff7400);
+}
+
+input.form_submit:hover {
+    background: rgba(255,164,57,0.9);
+}
+
+div.form_footer {
+    text-decoration: none;
+    margin: 20px 0 5px 0;
+    a {
+        color: #666666;
+    }
+    a:hover {
+        color: #e73562;
+    }
+}
+
+.footer-link-to-login {
+    margin: 25px auto 30px auto;
+    padding: 5px;
+    a {
+        text-decoration: underline;
+        font-size: 14px;
+        color: #192f60;
+    }
+    a:hover {
+        color: #e73562;
+    }
+}

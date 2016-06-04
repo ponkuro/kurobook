@@ -1,16 +1,53 @@
 .top-body {
     width: 100%;
     min-height: 100%;
+    min-height: 60vw;
     background: #fff url("top-bg.jpg") no-repeat center;
     background-size: cover;
     font-family: sans-serif;
 }
 
 .top-container {
-    max-width: 920px;
+    @media screen and (max-width:767px) { 
+        padding: 5px 0 20px 0;
+    }
+    @media screen and (min-width:768px) and ( max-width:991px) {
+        max-width: 760px;
+        padding: 30px 0;
+    }
+    @media screen and (min-width:992px) {
+        max-width: 960px;
+        padding: 35px 0;
+    }
     margin-left: auto;
     margin-right: auto;
-    padding: 30px 0 100px 0;
+    overflow: scroll;
+}
+
+.top-left_container {
+    @media screen and (max-width:767px) { 
+        padding: 0  20px;
+    }
+    @media screen and (min-width:768px) and ( max-width:991px) {
+        padding: 0  20px;
+    }
+    @media screen and (min-width:992px) {
+        padding: 0  30px;
+    }
+    margin: 0;
+}
+
+.top-right_container {
+    @media screen and (max-width:767px) { 
+        padding: 0  20px;
+    }
+    @media screen and (min-width:768px) and ( max-width:991px) {
+        padding: 0  20px;
+    }
+    @media screen and (min-width:992px) {
+        padding: 0  30px;
+    }
+    margin: 0;
 }
 
 .disp-box {
@@ -31,63 +68,105 @@
     -moz-box-pack: center;
 }
 
-.box-pack-justify {
-    box-pack: justify;
-    -webkit-box-pack: justify;
-    -moz-box-pack: justify;
-}
-
-.top-left_container {
-    max-width: 50%;
-    margin: 0;
-    padding: 0;
-}
-
 .top-box-message {
-    width: 500px;
+    @media screen and (max-width:767px) { 
+        width: 100%;
+    }
+    @media screen and (min-width:768px) and ( max-width:991px) {
+        width: 400px;
+    }
+    @media screen and (min-width:992px) {
+        width: 500px;
+    }
     font-weight: bold;
     color: white;
     margin: 0;
 }
 
 .top-box-main_text {
-    text-align: center;
-    margin: 0;
-    h1 {
-        font-size: 64px;
-        text-shadow: 3px 3px 3px black, 0 0 16px rgba(0,0,0,0.7);
+    @media screen and (max-width:767px) {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        h1 {
+            text-shadow: 3px 3px 3px black, 0 0 16px rgba(0,0,0,0.7);
+            font-size: 32px;
+            margin: 0;
+            padding: 10px 0 0 0;
+        }
+    }
+    @media screen and (min-width:768px) and ( max-width:991px) {
+        width: 400px;
         margin: 0;
-        padding: 30px 0 30px 0;
+        h1 {
+            text-shadow: 3px 3px 3px black, 0 0 16px rgba(0,0,0,0.7);
+            font-size: 46px;
+            margin: 0;
+            padding: 20px 0;
+        }
+    }
+    @media screen and (min-width:992px) {
+        width: 500px;
+        margin: 0;
+        h1 {
+            text-shadow: 3px 3px 3px black, 0 0 16px rgba(0,0,0,0.7);
+            font-size: 64px;
+            margin: 0;
+            padding: 30px 0;
+        }
     }
 }
 
 .top-box-sub_text {
+    @media screen and (max-width:767px) { 
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto 25px auto;
+        p {
+            font-size: 12px;
+            text-shadow: 2px 2px 3px black;
+            padding: 12px 15px;
+        }
+    }
+    @media screen and (min-width:768px) and ( max-width:991px) {
+        width: 330px;
+        p {
+            font-size: 15px;
+            text-shadow: 2px 2px 3px black;
+            margin-left: 5px;
+            padding: 15px 10px;
+        }
+    }
+    @media screen and (min-width:992px) {
+        width: 450px;
+        p {
+            font-size: 20px;
+            text-shadow: 2px 2px 3px black;
+            margin-left: 10px;
+            padding: 20px 15px;
+        }
+    }
     border-radius: 24px;
     background-color: rgba(152,96,94,0.5);
-    width: 450px;
-    margin-left: auto;
-    margin-right: auto;
-    p {
-        font-size: 20px;
-        text-shadow: 2px 2px 3px black;
-        margin-left: 15px;
-        padding: 20px 15px 20px 15px;
-    }
-}
-
-.top-right_container {
-    max-width: 50%;
-    margin: 0;
-    padding: 0;
 }
 
 .top-box-signup {
+    @media screen and (max-width:767px) { 
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    @media screen and (min-width:768px) and ( max-width:991px) {
+        width: 350px;
+        margin: 0 0 0 auto;
+    }
+    @media screen and (min-width:992px) {
+        width: 350px;
+        margin: 0 0 0 auto;
+    }
     border-radius: 6px;
     background-color: rgba(255,255,255,0.6);
     box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-    width: 350px;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
     h3 {
         font-size: 20px;
@@ -146,12 +225,27 @@ a.btn-signup {
     border-radius: 3px;
     font-size: 16px;
     color: white;
-    width: 240px;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.8);
     display: block;
+    width: 270px;
     margin-left: auto;
     margin-right: auto;
-    padding: 15px;
+    p {
+        padding: 15px 0 15px 15px;
+    }
+}
+
+.btn-icon_box {
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 24px;
+    width: 58px;
+    height: 100%;
+    border-right: solid 1px #202f55;
+    box-shadow: 5px 0px 10px -2px rgba(0,0,0,0.5);
+    margin: 0;
+    padding: 15px 0 15px 0;
 }
 
 .btn-facebook {
