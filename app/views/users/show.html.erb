@@ -4,7 +4,9 @@
   <%= @user.id %>
 </p>
 <% if @user.id == current_user.id %>
-  自分のページだよ
+  <%= link_to '新しい記事を投稿する', new_post_url, class: "btn btn-primary btn-lg"%>
+  <%= link_to "プロフィールの編集", edit_user_registration_url %>
 <% end %>
+<%= render "posts/userposts" %>
 <p>Find me in app/views/users/show.html.erb</p>
 <%= render "shared/footer" %>

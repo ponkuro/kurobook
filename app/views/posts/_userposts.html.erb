@@ -1,0 +1,17 @@
+<% @posts.each do |post| %>
+  <div class="panel panel-primary">
+    
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= post.title %></h3>
+    </div>
+    
+    <div class="panel-body">
+      <%= post.content %><br />
+      <p>
+      <em><%= post.created_at %></em>　
+      <em>投稿者：<%= post.user.name %></em>　
+      </p>
+    </div>
+    
+  </div>
+<% end %>
