@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :posts
-  devise_for :users
-  resources :users, only:[:index,:show] do
-    resources :posts, only:[:index]
+  resources :comments, only:[:create,:update]
+  resources :posts, only:[:index,:new,:create,:edit,:update,:destroy] do
+    resources :comments, only:[:edit,:destroy]
   end
+  devise_for :users
+  resources :users, only:[:index,:show]
   root 'top#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

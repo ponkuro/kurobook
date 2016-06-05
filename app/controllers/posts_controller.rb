@@ -5,9 +5,12 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all
-  end
-
-  def show
+    @comments = []
+    @comment = []
+    @posts.each do |post|
+      @comments[post.id] = post.comments
+      @comment[post.id] = post.comments.build
+    end
   end
   
   def new
@@ -18,7 +21,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: '記事を投稿しました。' }
+        format.html { redirect_to user_url(@post.user_id), notice: '記事を投稿しました。' }
       else
         format.html { render :new }
       end
@@ -31,7 +34,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: '記事の内容を更新しました。' }
+        format.html { redirect_to user_url(@post.user_id), notice: '記事の内容を更新しました。' }
       else
         format.html { render :edit }
       end
@@ -41,7 +44,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: '記事を削除しました。' }
+      format.html { redirect_to user_url(@post.user_id), notice: '記事を削除しました。' }
     end
   end
   

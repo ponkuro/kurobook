@@ -8,10 +8,11 @@
     <div class="panel-body">
       <%= post.content %><br />
       <p>
-      <em><%= post.created_at %></em>　
-      <em>投稿者：<%= post.user.name %></em>　
+      <em>投稿日:<%= post.created_at %></em>　
+      <em>投稿者:<%= post.user.name %></em>　
       </p>
+      <%= render partial: 'comments/index' , locals: {comments: @comments[post.id]} %>
+      <%= render partial: 'comments/form' , locals: {comment: @comment[post.id]} %>
     </div>
-    
   </div>
 <% end %>
