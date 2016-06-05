@@ -1,0 +1,10 @@
+<h1>Users#show</h1>
+<p>
+  <strong>id:</strong>
+  <%= @user.id %>
+</p>
+<% if @user.id == current_user.id %>
+  自分のページだよ
+<% end %>
+<p>Find me in app/views/users/show.html.erb</p>
+<%= render "shared/footer" %>
