@@ -1,12 +1,14 @@
-<ul>
-  <% comments.each do |comment| %>
-    <% unless comment.id.nil? %>
+<div class="comment-area" id="comments_area_<%= post_id %>">
+  <ul>
+    <% comments.each do |comment| %>
+      <% unless comment.id.nil? %>
       <li>
         <%= comment.user %>
         <%= comment.content %>
         <%= link_to 'Edit', edit_post_comment_url(comment.post_id,comment) %>
-        <%= link_to 'Destroy', post_comment_url(comment.post_id,comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Destroy', post_comment_url(comment.post_id,comment), method: :delete, remote: true, data: { confirm: 'コメントを削除します。よろしいですか？' } %>
       </li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+</div>

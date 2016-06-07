@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to user_url(@post.user_id), notice: 'Comment was successfully created.' }
+        format.js {render :redraw, notice: 'Comment was successfully created.'}
       else
         format.html { render :new }
       end
@@ -31,6 +32,7 @@ class CommentsController < ApplicationController
     @comment.destroy
     respond_to do |format|
       format.html { redirect_to user_url(@post.user_id), notice: 'Comment was successfully destroyed.' }
+      format.js {render :redraw, notice: 'Comment was successfully destroyed.'}
     end
   end
 
