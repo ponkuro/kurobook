@@ -13,6 +13,17 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, placeholder: "名前" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= image_tag profile_image_url(current_user) %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
