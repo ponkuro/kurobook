@@ -3,7 +3,15 @@ Rails.application.routes.draw do
   resources :posts, only:[:index,:new,:create,:edit,:update,:destroy] do
     resources :comments, only:[:edit,:destroy]
   end
-  devise_for :users
+  devise_for :users,
+    path_names: {sign_in: "login", sign_out: "logout"},
+    controllers: {
+      sessions: "users/sessions",
+      registrations: "users/registrations",
+      passwords: "users/passwords",
+      omniauth_callbacks: "users/omniauth_callbacks"
+    }
+
   resources :users, only:[:index,:show]
   root 'top#index'
 
