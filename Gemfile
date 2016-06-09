@@ -33,10 +33,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 # Use Devise, OmniAuth for registration controll
-  gem 'devise'
-  gem 'omniauth' 
-  gem 'omniauth-twitter' 
-  gem 'omniauth-facebook'
+gem 'devise'
+gem 'omniauth' 
+gem 'omniauth-twitter' 
+gem 'omniauth-facebook'
+
+# Use dotenv for secure code controll
+gem 'dotenv-rails'
+
+# Use carrierwave for image upload
+gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,9 +54,6 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
-  # Use dotenv for secure code controll
-  gem 'dotenv-rails'
   
   # Other useful gems for debugging
   gem 'better_errors'

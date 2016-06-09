@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :omniauthable, omniauth_providers: [:facebook, :twitter]
+  mount_uploader :image, ImageUploader
   has_many :posts
   has_many :comments
   
@@ -35,6 +36,7 @@ class User < ActiveRecord::Base
         user.email = User.create_unique_email
       end
       
+      user.remote_image_url = "https://graph.facebook.com/#{user.uid}/picture?width=120&height=120"
       user.skip_confirmation!
       user.save(:validate => false)
     end
@@ -57,6 +59,8 @@ class User < ActiveRecord::Base
         email: User.create_unique_email,
         password: Devise.friendly_token[0,20]
       )
+      
+      user.remote_image_url = "http://furyu.nazo.cc/twicon/#{user.name}/original"
       user.skip_confirmation!
       user.save(:validate => false)
     end

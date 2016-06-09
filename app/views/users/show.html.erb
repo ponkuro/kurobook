@@ -4,7 +4,12 @@
   <strong>email: </strong> <%= @user.email %><br />
   <strong>name:</strong> <%= @user.name %><br />
   <strong>profile:</strong> <%= @user.profile %><br />
-  <strong>image_url:</strong> <%= @user.image_url %><br />
+  <strong>image:</strong> <%= @user.image %><br />
+  <% unless @user.image? %>
+    <strong>no image</strong><br />
+  <% else %>
+    <%= image_tag @user.image.url %><br />
+  <% end %>
   <strong>uid:</strong> <%= @user.uid %><br />
   <strong>provider:</strong> <%= @user.provider %><br />
   <strong>confirmation_token:</strong> <%= @user.confirmation_token %><br />
