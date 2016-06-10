@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :omniauthable, omniauth_providers: [:facebook, :twitter]
   mount_uploader :image, ImageUploader
+  paginates_per 20
   has_many :posts
   has_many :comments
   

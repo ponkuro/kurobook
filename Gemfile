@@ -38,6 +38,9 @@ gem 'omniauth'
 gem 'omniauth-twitter' 
 gem 'omniauth-facebook'
 
+# Use kaminari for page controll
+gem 'kaminari'
+
 # Use dotenv for secure code controll
 gem 'dotenv-rails'
 
