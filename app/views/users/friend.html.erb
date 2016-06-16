@@ -1,4 +1,5 @@
 <div class="user-container">
+  <%= render partial: 'users/header' , locals: {user: @user} %>
   <%= render partial: 'users/list_form' , locals: {users: @users} %>
 </div>
 <%= render "shared/footer" %>

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :posts, only:[:index,:new,:create,:edit,:update,:destroy] do
     resources :comments, only:[:edit,:destroy]
   end
+  resources :relationships, only:[:create,:destroy]
+  get "users/friendship" => "users#friendship"
   devise_for :users,
     path_names: {sign_in: "login", sign_out: "logout"},
     controllers: {
@@ -12,7 +14,11 @@ Rails.application.routes.draw do
       omniauth_callbacks: "users/omniauth_callbacks"
     }
 
-  resources :users, only:[:index,:show]
+  resources :users, only:[:index,:show] do
+    member do
+      get :about, :friend, :following, :followed
+    end
+  end
   root 'top#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

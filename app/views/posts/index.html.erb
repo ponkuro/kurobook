@@ -1,3 +1,4 @@
-<h1>Posts#index</h1>
-<%= render "posts/userposts" %>
+<div class="post-container">
+  <%= render partial: 'posts/list_form' , locals: {posts: @posts, comments: @comments, comment: @comment} %>
+</div>
 <%= render "shared/footer" %>

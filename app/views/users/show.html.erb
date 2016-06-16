@@ -1,27 +1,8 @@
-<h1>Users#show</h1>
-<p>
-  <strong>id:</strong> <%= @user.id %><br />
-  <strong>email: </strong> <%= @user.email %><br />
-  <strong>name:</strong> <%= @user.name %><br />
-  <strong>profile:</strong> <%= @user.profile %><br />
-  <strong>image:</strong> <%= @user.image %><br />
-  <%= image_tag profile_image_url(@user) %><br />
-  <strong>uid:</strong> <%= @user.uid %><br />
-  <strong>provider:</strong> <%= @user.provider %><br />
-  <strong>confirmation_token:</strong> <%= @user.confirmation_token %><br />
-  <strong>confirmation_sent_at:</strong> <%= @user.confirmation_sent_at %><br />
-  <strong>unconfirmed_email:</strong> <%= @user.unconfirmed_email %><br />
-  <strong>confirmed_at:</strong> <%= @user.confirmed_at %><br />
-  <strong>sign_in_count:</strong> <%= @user.sign_in_count %><br />
-  <strong>current_sign_in_at:</strong> <%= @user.current_sign_in_at %><br />
-  <strong>last_sign_in_at:</strong> <%= @user.last_sign_in_at %><br />
-  <strong>created_at:</strong> <%= @user.created_at %><br />
-  <strong>updated_at:</strong> <%= @user.updated_at %><br />
-</p>
-<% if @user.id == current_user.id %>
-  <%= link_to '新しい記事を投稿する', new_post_url, class: "btn btn-primary btn-lg"%>
-  <%= link_to "プロフィールの編集", edit_user_registration_url %>
-<% end %>
-<%= render "posts/userposts" %>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="user-container">
+  <%= render partial: 'users/header' , locals: {user: @user} %>
+  <% if @user.id == current_user.id %>
+    <%= link_to '新しい記事を投稿する', new_post_url, class: "btn btn-primary btn-lg"%>
+  <% end %>
+  <%= render partial: 'posts/list_form' , locals: {posts: @posts, comments: @comments, comment: @comment} %>
+</div>
 <%= render "shared/footer" %>

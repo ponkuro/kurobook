@@ -1,0 +1,22 @@
+<div class="user-header_container">
+  <div class="user-header_body">
+    <div class="user-header_image">
+      <%= image_tag profile_image_url(user) %>
+    </div>
+    <div class="user-header_right_container">
+      <div class="user-header_main">
+        <h2><%= user.name %></h2>
+        <div class="follow_form" id="follow_form_<%= user.id %>">
+          <%= render partial: 'follow_form' , locals: {user: user} %>
+        </div>
+      </div>
+      <div class="user-header_menu">
+        <ul>
+          <li><a href="<%= user_url(user.id) %>">タイムライン</a></li>
+          <li><a href="<%= about_user_url(user.id) %>">プロフィール</a></li>
+          <li><a href="<%= friend_user_url(user.id) %>">フレンド</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

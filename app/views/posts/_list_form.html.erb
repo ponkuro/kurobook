@@ -1,0 +1,31 @@
+<div class="post-postlist">
+  <%= paginate posts, window: 2 %>
+  <ul>
+    <% posts.each do |f| %>
+      <li>
+        <div class="post_area">
+          <div class="post-body">
+            <div class="post-header">
+              <div class="post-header_image">
+                <%= image_tag profile_image_mini_url(f.user) %>
+              </div>
+              <div class="post-header_info">
+                <p>投稿者 : <strong><%= f.user.name %></strong></p>
+                <p>投稿日 : <%= f.created_at.strftime("%Y.%m.%d %H:%M") %></p>
+              </div>
+              <div class="clear_both"></div>
+            </div>
+            <div class="post-content">
+              <%= simple_format(f.content) %>
+            </div>
+          </div>
+          <div class="comment-area" id="comments_area_<%= f.id %>">
+            <%= render partial: 'comments/index' , locals: {comments: comments[f.id]} %>
+          </div>
+          <%= render partial: 'comments/form' , locals: {comment: comment[f.id]} %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate posts, window: 2 %>
+</div>

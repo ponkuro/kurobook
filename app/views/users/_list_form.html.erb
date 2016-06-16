@@ -1,0 +1,18 @@
+<div class="user-userlist">
+  <%= paginate users, window: 2 %>
+  <ul>
+    <% users.each do |user| %>
+      <li>
+        <div class="user_area">
+          <a href="<%= user_url(user.id) %>"><%= image_tag profile_image_small_url(user) %></a>
+          <a href="<%= user_url(user.id) %>"><h3><%= user.name %></h3></a>
+          <div class="follow_form" id="follow_form_<%= user.id %>">
+            <%= render partial: 'follow_form' , locals: {user: user} %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <div class="clear_both"></div>
+  <%= paginate users, window: 2 %>
+</div>

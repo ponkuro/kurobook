@@ -8,6 +8,16 @@ class User < ActiveRecord::Base
   paginates_per 20
   has_many :posts
   has_many :comments
+  #フォローしている関係を定義
+  has_many :relationships, class_name: "Relationship", foreign_key: "sender_id", dependent: :destroy
+  has_many :following_users, through: :relationships, source: :receiver
+  #フォローされている関係を定義
+  has_many :received_relationships, class_name: "Relationship", foreign_key: "receiver_id", dependent: :destroy
+  has_many :followers, through: :received_relationships, source: :sender
+  
+  ######################################
+  ##  ユーザー認証に関連したメソッド  ##
+  ######################################
   
   # UUID(Universally Unique Identifier)を生成
   def self.create_unique_string 
@@ -69,5 +79,41 @@ class User < ActiveRecord::Base
     # 処理が終わる前に戻り値として明示的にセット
     user
     
+  end
+  
+  ######################################
+  ##  フレンド機能に関連したメソッド  ##
+  ######################################
+  
+  # 指定したuserをフォローする
+  def follow!(target_user)
+    relationships.create!(receiver_id: target_user.id)
+  end
+
+  # 指定したuserのフォローを解除する
+  def unfollow!(target_user)
+    relationships.find_by(receiver_id: target_user.id).destroy
+  end
+  
+  # 指定したuserをフォローしているか確認する
+  def following?(target_user)
+    relationships.find_by(receiver_id: target_user.id)
+  end
+
+  # 指定したuserにフォローされているか確認する
+  def followed?(target_user)
+    received_relationships.find_by(sender_id: target_user.id)
+  end
+
+  # 自身とフレンド関係にあるuser一覧を取得する
+  def friend_users
+    User.get_friendlist(self)
+  end
+
+  def self.get_friendlist(target_user)
+    sql1 = "SELECT users.* FROM users INNER JOIN relationships ON users.id = relationships.receiver_id WHERE relationships.sender_id = :user_id"
+    sql2 = "SELECT users.* FROM users INNER JOIN relationships ON users.id = relationships.sender_id WHERE relationships.receiver_id = :user_id"
+    friend_user_ids = "SELECT X.id FROM (#{sql1}) X INNER JOIN (#{sql2}) Y ON X.id = Y.id"
+    where("id IN (#{friend_user_ids})", user_id: target_user.id)
   end
 end
