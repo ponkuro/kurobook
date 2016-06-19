@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_comment, only: [:edit, :update, :destroy]
   before_action :set_post, only: [:update, :destroy]
+  before_action :correct_user_comment, only: [:edit, :update, :destroy]
 
   def create
     @comment = Comment.new(comment_params)
@@ -44,6 +45,10 @@ class CommentsController < ApplicationController
     
     def set_post
       @post = Post.find(@comment.post_id)
+    end
+    
+    def correct_user_comment
+      redirect_to(root_url) unless @comment.user_id == current_user.id
     end
     
     def comment_params

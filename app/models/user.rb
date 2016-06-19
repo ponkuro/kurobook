@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
          :confirmable, :omniauthable, omniauth_providers: [:facebook, :twitter]
   mount_uploader :image, ImageUploader
   paginates_per 20
-  has_many :posts
-  has_many :comments
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   #フォローしている関係を定義
   has_many :relationships, class_name: "Relationship", foreign_key: "sender_id", dependent: :destroy
   has_many :following_users, through: :relationships, source: :receiver

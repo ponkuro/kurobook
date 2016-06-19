@@ -1,5 +1,10 @@
 module ApplicationHelper
   
+  # 改行をbrに変換して表示
+  def hbr(text)
+    html_escape(text).gsub(/\r\n|\r|\n/, "<br />").html_safe
+  end
+  
   # プロフィール画像のURLを設定
   def profile_image_url(user)
     unless user.image?

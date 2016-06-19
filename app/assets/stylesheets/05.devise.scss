@@ -25,7 +25,38 @@ form.new_user, .regist-social_signup {
     }
 }
 
+.edit_user, .leave-form {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    border-radius: 10px;
+    padding: 10px 0 25px 0;
+    h3 {
+        font-size: 1.2em;
+    }
+}
+
+.form_label {
+    width: 85%;
+    text-align: left;
+    margin: 0 auto;
+    padding: 5px 0;
+    label {
+        margin: 0 0 0 4px;
+    }
+}
+
 input.form_field {
+    width: 85%;
+    border: solid 1px #aaaaaa;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+textarea.form_field {
     width: 85%;
     border: solid 1px #aaaaaa;
     border-radius: 4px;
@@ -36,6 +67,24 @@ input.form_field {
 div.form_field {
     width: 85%;
     margin-bottom: 20px;
+}
+
+div.profile_img_area {
+    width: 85%;
+    height: 145px;
+    border: solid 1px #aaaaaa;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 0 auto 20px auto;
+    img {
+        float: left;
+        border-radius: 2px;
+        margin: 0 -120px 0 0;
+    }
+    input {
+        margin: 50px 0 0 0;
+        padding: 0 0 0 140px;
+    }
 }
 
 input.form_submit {
@@ -77,5 +126,25 @@ div.form_footer {
     }
     a:hover {
         color: #e73562;
+    }
+}
+
+.btn_delete {
+    display: inline;
+    background: -webkit-linear-gradient(#fffff9, #cccccc);
+    background: -moz-linear-gradient(#fffff9, #cccccc);
+    background: -o-linear-gradient(#fffff9, #cccccc);
+    background: -ms-linear-gradient(#fffff9, #cccccc);
+    background: linear-gradient(#fffff9, #cccccc);
+    text-align: center;
+    margin-right: 15px;
+    padding: 6px 12px;
+    a {
+        color: #3c3c3c;
+        text-decoration: none;
+        i {
+            font-size: 1.1em;
+            margin-right: 2px;
+        }
     }
 }

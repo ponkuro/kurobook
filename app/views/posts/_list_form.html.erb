@@ -6,17 +6,26 @@
         <div class="post_area">
           <div class="post-body">
             <div class="post-header">
-              <div class="post-header_image">
-                <%= image_tag profile_image_mini_url(f.user) %>
+              <div class="post-header_img_wrapper">
+                <div class="post-header_image">
+                  <%= image_tag profile_image_mini_url(f.user) %>
+                </div>
               </div>
               <div class="post-header_info">
                 <p>投稿者 : <strong><%= f.user.name %></strong></p>
                 <p>投稿日 : <%= f.created_at.strftime("%Y.%m.%d %H:%M") %></p>
               </div>
+                <% if f.user_id == current_user.id %>
+                  <div class="post_edit">
+                    <a href="<%= edit_post_url(f.id) %>" class="btn btn-post_edit">編集</a>
+                    <a href="<%= post_url(f.id) %>" class="btn btn-post_edit" data-method="delete" data-confirm="記事を削除します。よろしいですか？">削除</a>
+                  </div>
+                <% end %>
+              
               <div class="clear_both"></div>
             </div>
             <div class="post-content">
-              <%= simple_format(f.content) %>
+              <%= hbr(f.content) %>
             </div>
           </div>
           <div class="comment-area" id="comments_area_<%= f.id %>">

@@ -1,0 +1,16 @@
+<div class="comment-form">
+  <%= form_for(comment) do |f| %>
+    <div class="comment-form_img">
+      <%= image_tag profile_image_mini_url(current_user) %>
+    </div>
+    <div class="comment-form_field">
+      <%= f.text_field :content, placeholder: "コメント" %>
+      <%= f.hidden_field :post_id %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+    </div>
+    <div class="comment-form_action">
+      <%= f.submit "Enter", class: "btn btn-comment" %>
+    </div>
+  <% end %>
+  <div class="clear_both"></div>
+</div>

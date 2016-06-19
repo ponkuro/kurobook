@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :correct_user_post, only: [:edit, :update, :destroy]
   
   def index
     @posts = Post.order(created_at: :desc).page(params[:page])
@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(post_params)
+    correct_user_post
     respond_to do |format|
       if @post.save
         format.html { redirect_to user_url(@post.user_id), notice: '記事を投稿しました。' }
@@ -57,7 +58,7 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :content, :user_id )
     end
     
-    def correct_user
+    def correct_user_post
       redirect_to(root_url) unless @post.user_id == current_user.id
     end
 end

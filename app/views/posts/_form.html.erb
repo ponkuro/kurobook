@@ -1,14 +1,10 @@
-<%= form_for(@post) do |f| %>
+<%= form_for(post) do |f| %>
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title, class: "form-control" %>
+    <div class="form_label">
+      <span class="mark-red">必須</span>
+      <%= f.label :content, "投稿の内容" %>
+    </div>
+    <%= f.text_area :content, placeholder: "今みんなに伝えたいことは？", rows: 6, class: "form_field" %>
   </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content, class: "form-control" %>
-  </div>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit "投稿する", class: "form_submit" %>
 <% end %>
