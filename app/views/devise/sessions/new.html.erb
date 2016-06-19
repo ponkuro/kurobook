@@ -1,6 +1,10 @@
 <div class="regist-container">
-  <h2>ログイン</h2>
   
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
+  
+  <h2>ログイン</h2>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     
     <h3>メールアドレスでログイン</h3>
