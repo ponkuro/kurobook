@@ -33,6 +33,8 @@ class ContactController < ApplicationController
       @contact = Contact.new(contact_params)
       respond_to do |format|
         if @contact.save
+          # deliverメソッドを使って、メールを送信する
+      	  NoticeMailer.post_thanks_email(@contact).deliver
           format.html { render :action => 'thanks' }
         else
           format.html { render :action => 'index' }
