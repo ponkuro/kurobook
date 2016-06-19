@@ -1,0 +1,66 @@
+<div class="top-body">
+  <div class="top-container">
+    <div class="top-left_container col-xs-12 col-sm-6">
+      <div class="top-box-message">
+        <div class="top-box-main_text">
+          <h1>SNSっぽいもの<br />始めました。</h1>
+        </div>
+        <div class="top-box-sub_text">
+          <p>
+            Kurobook（くろぶっく）は、<br />
+            Ruby on Railsの学習のために作成した<br />
+            なんか何処かで見たことあるような<br />
+            ソーシャル的な機能があるWebサイトです。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="top-right_container col-xs-12 col-sm-6 disp-box">
+      <div class="top-box-signup">
+        <h3>新規登録（無料）</h3>
+        <div class="form-signup">
+          <ul>
+            <li>
+              <div class="section-items disp-box box-pack-center">
+                <div class="line-left-50 disp-box"></div>
+                <div class="word-middle disp-box box-flex box-pack-center">SNSアカウントを使用</div>
+                <div class="line-right-50 disp-box"></div>
+              </div>
+            </li>
+            <li>
+              <a href=<%= user_facebook_omniauth_authorize_url %> class="btn-signup btn-facebook">
+                <i class="btn-icon_box fa fa-facebook" aria-hidden="true"></i>
+                <p>Facebookで登録</p>
+              </a>
+            </li>
+            <li>
+              <a href=<%= user_twitter_omniauth_authorize_url %> class="btn-signup btn-twitter">
+                <i class="btn-icon_box fa fa-twitter" aria-hidden="true"></i>
+                <p>Twitterで登録</p>
+              </a>
+            </li>
+            <li>
+              <p>許可なくSNSに投稿することはありません。</p>
+            </li>
+            <li>
+              <div class="section-items disp-box box-pack-center">
+                <div class="line-left-80 disp-box"></div>
+                <div class="word-middle disp-box box-flex box-pack-center">または</div>
+                <div class="line-right-80 disp-box"></div>
+              </div>
+            </li>
+            <li>
+              <a href="<%= new_user_registration_url %>" class="btn-signup btn-email">
+                <i class="btn-icon_box fa fa-envelope-o" aria-hidden="true"></i>
+                <p>メールアドレスで登録</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="link-to-login">
+          <a href="<%= new_user_session_url %>">すでに登録済みの方はこちら</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

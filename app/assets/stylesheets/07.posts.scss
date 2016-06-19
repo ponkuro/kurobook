@@ -1,0 +1,239 @@
+.post-container {
+    @media screen and (max-width:767px) { 
+        padding: 5px 0 20px 0;
+        font-size: 11px;
+    }
+    @media screen and (min-width:768px) and ( max-width:991px) {
+        max-width: 760px;
+        padding: 30px 0;
+    }
+    @media screen and (min-width:992px) {
+        max-width: 960px;
+        padding: 30px 0;
+    }
+    margin-left: auto;
+    margin-right: auto;
+    overflow: scroll;
+}
+
+.post-postlist {
+    @media screen and (max-width:767px) { 
+        max-width: 450px;
+    }
+    @media screen and (min-width:768px) and ( max-width:991px) {
+        max-width: 450px;
+    }
+    @media screen and (min-width:992px) {
+        max-width: 600px;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            margin: 40px 0;
+            padding: 0;
+        }
+    }
+}
+
+.post_area {
+    border-radius: 4px;
+    background-color: #fafdff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    margin: 0;
+}
+
+.post-body {
+    border-radius: 4px;
+    background-color: #f7f6fb;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
+    margin: 0;
+}
+
+.post-header {
+    background-color: #bbdbf3;
+    border-radius: 4px 4px 0 0;
+    height: 58px;
+}
+
+.post-header_img_wrapper {
+    float: left;
+    width: 48px;
+    margin: 0 -48px 0 0;
+    padding: 0;
+}
+
+.post-header_image {
+    width: 48px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    border: solid 1px #aaaaaa;
+    margin: 5px 8px;
+    padding: 3px;
+    img {
+        border-radius: 2px;
+        margin: 0;
+    }
+}
+
+.post-header_info {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 6px 130px 6px 65px;
+    p {
+        width: 100%;
+        margin: 3px 0 0 0;
+        padding: 0;
+    }
+}
+
+.post_edit {
+    float: right;
+    width: 130px;
+    text-align: right;
+    margin: 0 0 0 -130px;
+    padding: 25px 15px 0 0;
+}
+
+.btn-post_edit {
+    color: #3c3c3c;
+    padding: 5px 8px;
+}
+
+.post-content {
+    min-height: 100px;
+    padding: 15px 20px 20px 20px;
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.comment-area {
+    min-height: 30px;
+    margin: 0;
+    padding: 5px 10px 0 20px;
+    ul {
+        margin: 0;
+        li {
+            margin: 0;
+        }
+    }
+}
+
+.comment-area_view {
+    min-height: 60px;
+    border-radius: 4px;
+    background-color: #f7f6fb;
+    margin: 10px 0;
+    padding: 10px;
+    img {
+        float: left;
+        margin: 0 10px 0 0;
+    }
+}
+
+.comment_text {
+    margin: 0;
+    padding: 4px 0 0 5px;
+}
+
+.comment_edit {
+    display: inline;
+    margin: 0 5px;
+    padding: 0;
+}
+
+.comment-form {
+    width: 100%;
+    height: 52px;
+    border-radius: 0 0 4px 4px;
+    border-top: 1px solid #999999;
+    background-color: #b4aeb1;
+    margin: 0 auto;
+    padding: 5px 10px;
+}
+
+.comment-form_img {
+    float: left;
+    width: 50px;
+    margin: 0 -50px 0 0;
+    padding: 0;
+    img {
+        border-radius: 2px;
+    }
+}
+
+.comment-form_field {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 3px 70px 0 50px;
+    input {
+        width: 100%;
+        height: 35px;
+        border: solid 1px #999999;
+        border-radius: 4px;
+        margin: 0;
+        padding: 0 10px;
+    }
+}
+
+.comment-form_action {
+    float: right;
+    width: 70px;
+    text-align: right;
+    margin: 0 0 0 -80px;
+    padding: 5px 0;
+}
+
+.btn-comment {
+    width: 60px;
+    height: 30px;
+    margin-right: 2px;
+    background: -webkit-linear-gradient(#fffff9, #cccccc);
+    background: -moz-linear-gradient(#fffff9, #cccccc);
+    background: -o-linear-gradient(#fffff9, #cccccc);
+    background: -ms-linear-gradient(#fffff9, #cccccc);
+    background: linear-gradient(#fffff9, #cccccc);
+}
+
+.btn-new_post {
+    width: 200px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 12px;
+    background: -webkit-linear-gradient(#ffa443, #ff7400);
+    background: -moz-linear-gradient(#ffa443, #ff7400);
+    background: -o-linear-gradient(#ffa443, #ff7400);
+    background: -ms-linear-gradient(#ffa443, #ff7400);
+    background: linear-gradient(#ffa443, #ff7400);
+}
+
+.btn-new_post:hover {
+    background: rgba(255,164,57,0.9);
+    color: white;
+    text-decoration: none;
+}
+
+form.new_post, .edit_post {
+    width: 90%;
+    max-width: 650px;
+    margin: 0 auto 30px auto;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    border-radius: 10px;
+    padding: 25px 0 25px 0;
+}
+
+.comment-edit_container {
+    width: 90%;
+    max-width: 650px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px 0 80px 0;
+}

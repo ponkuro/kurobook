@@ -1,0 +1,6 @@
+<% if current_user.provider? %>
+  <%= render partial: 'devise/registrations/oauth_edit' %>
+<% else %>
+  <%= render partial: 'devise/registrations/email_edit' %>
+<% end %>
+<%= render "shared/footer" %>

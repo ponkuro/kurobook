@@ -1,0 +1,10 @@
+<%= form_for(post) do |f| %>
+  <div class="field">
+    <div class="form_label">
+      <span class="mark-red">必須</span>
+      <%= f.label :content, "投稿の内容" %>
+    </div>
+    <%= f.text_area :content, placeholder: "今みんなに伝えたいことは？", rows: 6, class: "form_field" %>
+  </div>
+  <%= f.submit "投稿する", class: "form_submit" %>
+<% end %>

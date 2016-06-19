@@ -1,0 +1,30 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  
+  <h3>パスワードの変更</h3>
+  
+  <div class="field">
+    <div class="form_label">
+      <span class="mark-red">必須</span>
+      <%= f.label :password, "新しいパスワード" %>
+    </div>
+    <%= f.password_field :password, placeholder: "新しいパスワード", autocomplete: "off", class: "form_field"  %>
+  </div>
+  
+  <div class="field">
+    <div class="form_label">
+      <span class="mark-red">必須</span>
+      <%= f.label :password_confirmation, "確認のため再入力" %>
+    </div>
+    <%= f.password_field :password_confirmation, placeholder: "パスワード（再入力）", autocomplete: "off", class: "form_field"  %>
+  </div>
+  
+  <div class="field">
+    <div class="form_label">
+      <span class="mark-red">必須</span>
+      <%= f.label :current_password, "現在のパスワード（認証）" %>
+    </div>
+    <%= f.password_field :current_password, placeholder: "現在のパスワード", autocomplete: "off", class: "form_field"  %>
+  </div>
+  <%= f.submit "変更する", class: "form_submit" %>
+    
+<% end %>

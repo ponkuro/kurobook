@@ -1,0 +1,10 @@
+<div class="user-container">
+  <%= render partial: 'users/header' , locals: {user: @user} %>
+  <% if @user.id == current_user.id %>
+    <div class="new_post_area">
+      <%= link_to '新しい記事を投稿する', new_post_url, class: "btn-new_post" %>
+    </div>
+  <% end %>
+  <%= render partial: 'posts/list_form' , locals: {posts: @posts, comments: @comments, comment: @comment} %>
+</div>
+<%= render "shared/footer" %>

@@ -1,0 +1,11 @@
+<div class="regist-container">
+  <h2>登録したメールアドレスへの再通知</h2>
+
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <h3>確認メールを再送する</h3>
+    <%= devise_error_messages! %>
+    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: "メールアドレス", class: "form_field" %>
+    <%= f.submit "送信する", class: "form_submit" %>
+  <% end %>
+
+</div>

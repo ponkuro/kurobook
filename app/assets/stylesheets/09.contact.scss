@@ -1,0 +1,53 @@
+.contact-container {
+    @media screen and (max-width:767px) { 
+        padding: 5px 0 20px 0;
+    }
+    @media screen and (min-width:768px) and ( max-width:991px) {
+        padding: 30px 0;
+    }
+    @media screen and (min-width:992px) {
+        padding: 35px 0;
+    }
+    text-align: center;
+    overflow: scroll;
+}
+
+form.new_contact, .confirm-field {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    border-radius: 10px;
+    padding: 20px 0 25px 0;
+}
+
+.confirm-content_area {
+    width: 85%;
+    border: solid 1px #aaaaaa;
+    border-radius: 4px;
+    text-align: left;
+    padding: 10px;
+    margin: 0 auto 20px auto;
+}
+
+.confirm-btn_area, .thanks-message {
+    width: 85%;
+    border-top: dashed 3px #aaaaaa;
+    margin: 30px auto 0 auto;
+    padding: 0;
+    p {
+        padding: 10px 0 0 0;
+    }
+    form {
+        box-shadow: none;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+.btn-return {
+    width: 130px;
+    color: #3c3c3c;
+    padding: 5px;
+}

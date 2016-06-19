@@ -1,0 +1,46 @@
+<div class="regist-container">
+  <h2>新規登録（無料）</h2>
+  
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    
+    <h3>メールアドレスで登録</h3>
+    <%= devise_error_messages! %>
+    <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form_field" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード（半角6文字以上）", class: "form_field" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワード（確認入力）", class: "form_field" %>
+    <%= f.submit "上記内容で登録する", class: "form_submit" %>
+    <div class="form_footer">
+      <a href="<%= new_confirmation_url(resource_name) %>">確認メールが届かない方はこちら</a>
+    </div>
+    
+  <% end %>
+  
+  <div class="regist-social_signup">
+    <h3>または</h3>
+    <div class="form-signup">
+      <ul>
+        <li>
+          <a href=<%= user_facebook_omniauth_authorize_url %> class="btn-signup btn-facebook">
+            <i class="btn-icon_box fa fa-facebook" aria-hidden="true"></i>
+            <p>Facebookで登録</p>
+          </a>
+        </li>
+        <li>
+          <a href=<%= user_twitter_omniauth_authorize_url %> class="btn-signup btn-twitter">
+            <i class="btn-icon_box fa fa-twitter" aria-hidden="true"></i>
+            <p>Twitterで登録</p>
+          </a>
+        </li>
+        <li>
+          <p>許可なくSNSに投稿することはありません。</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-link-to-login">
+    <a href="<%= new_user_session_url %>">すでに登録済みの方はこちら</a>
+  </div>
+  
+</div>
+<%= render "shared/footer" %>

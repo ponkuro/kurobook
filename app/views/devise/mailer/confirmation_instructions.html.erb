@@ -1,0 +1,5 @@
+<p><%= @email %> 様</p>
+<p>このたびはKurobookにご登録いただきありがとうございます。</p>
+<p>以下のURLにアクセスすることでアカウントの有効化が完了します。</p>
+<p><%= link_to confirmation_url(@resource, confirmation_token: @token), confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>※このメールに心当たりがない場合、URLにはアクセスせずメールを破棄してください。</p>

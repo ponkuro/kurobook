@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  <%= render "top/usertop" %>
+<% else %>
+  <%= render "top/top1" %>
+<% end %>
+<%= render "shared/footer" %>

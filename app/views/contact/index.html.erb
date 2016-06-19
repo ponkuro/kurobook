@@ -1,0 +1,48 @@
+<div class="contact-container">
+  <h2>お問い合わせ</h2>
+  
+  <% if @contact.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <strong>入力内容にエラーがあります</strong>
+      <ul>
+        <% @contact.errors.each do |attr, msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for @contact, url: contact_confirm_url do |f| %>
+  
+    <h3>入力フォーム</h3>
+
+    <div class="field">
+      <div class="form_label">
+        <span class="mark-red">必須</span>
+        <%= f.label :name, "お名前", autofocus: true %>
+      </div>
+      <%= f.text_field :name, placeholder: "お名前", autofocus: true, class: "form_field" %>
+    </div>
+  
+    <div class="field">
+      <div class="form_label">
+        <span class="mark-red">必須</span>
+        <%= f.label :email, "メールアドレス" %>
+      </div>
+      <%= f.email_field :email, placeholder: "メールアドレス", class: "form_field" %>
+    </div>
+  
+    <div class="field">
+      <div class="form_label">
+        <span class="mark-red">必須</span>
+        <%= f.label :message, "お問い合わせ内容" %>
+      </div>
+      <%= f.text_area :message, placeholder: "内容を入力して下さい", rows: 8, class: "form_field" %>
+    </div>
+  
+    <%= f.submit "送信内容の確認", class: "form_submit" %>
+  
+  <% end %>
+
+</div>
+<%= render "shared/footer" %>

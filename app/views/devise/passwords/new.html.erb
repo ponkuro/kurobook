@@ -1,0 +1,11 @@
+<div class="regist-container">
+  <h2>パスワードのリセット（再設定）</h2>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <h3>再設定の通知を送る</h3>
+    <%= devise_error_messages! %>
+    <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form_field" %>
+    <%= f.submit "送信する", class: "form_submit" %>
+  <% end %>
+  
+</div>
