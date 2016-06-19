@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     correct_user_post
     respond_to do |format|
       if @post.save
-        format.html { redirect_to user_url(@post.user_id), notice: '記事を投稿しました。' }
+        format.html { redirect_to user_url(@post.user_id) }
       else
         format.html { render :new }
       end
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to user_url(@post.user_id), notice: '記事の内容を更新しました。' }
+        format.html { redirect_to user_url(@post.user_id) }
       else
         format.html { render :edit }
       end
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to user_url(@post.user_id), notice: '記事を削除しました。' }
+      format.html { redirect_to user_url(@post.user_id) }
     end
   end
   

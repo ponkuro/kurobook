@@ -9,8 +9,8 @@ class CommentsController < ApplicationController
     @post = Post.find(@comment.post_id)
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to user_url(@post.user_id), notice: 'Comment was successfully created.' }
-        format.js {render :redraw, notice: 'Comment was successfully created.'}
+        format.html { redirect_to user_url(@post.user_id) }
+        format.js {render :redraw }
       else
         format.html { render :new }
       end
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to user_url(@post.user_id), notice: 'Comment was successfully updated.' }
+        format.html { redirect_to user_url(@post.user_id) }
       else
         format.html { render :edit }
       end
@@ -33,8 +33,8 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to user_url(@post.user_id), notice: 'Comment was successfully destroyed.' }
-      format.js {render :redraw, notice: 'Comment was successfully destroyed.'}
+      format.html { redirect_to user_url(@post.user_id) }
+      format.js {render :redraw }
     end
   end
 

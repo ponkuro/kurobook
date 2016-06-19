@@ -3,6 +3,6 @@ class NoticeMailer < ApplicationMailer
 
   def post_thanks_email(post)
     @contact = post
-    mail to: post.email, subject: "【Achieve】お問い合わせを受け付けました。"
+    mail to: post.email, subject: "【Kurobook】お問い合わせを受け付けました。"
   end
 end

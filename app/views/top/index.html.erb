@@ -1,6 +1,10 @@
-<% if user_signed_in? %>
-  <%= render "top/usertop" %>
+<% if flash.present? %>
+    <%= render "top/notice" %>
 <% else %>
-  <%= render "top/top1" %>
+  <% if user_signed_in? %>
+    <%= render "top/usertop" %>
+  <% else %>
+    <%= render "top/top1" %>
+  <% end %>
 <% end %>
 <%= render "shared/footer" %>
