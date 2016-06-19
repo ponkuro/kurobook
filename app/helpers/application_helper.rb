@@ -18,7 +18,7 @@ module ApplicationHelper
   # プロフィール画像(small)のURLを設定
   def profile_image_small_url(user)
     unless user.image?
-      url = asset_path "assets/default-img-small.jpg"
+      url = asset_path "default-img-small.jpg"
     else
       url = user.image.small.url
     end
@@ -28,7 +28,7 @@ module ApplicationHelper
   # プロフィール画像(mini)のURLを設定
   def profile_image_mini_url(user)
     unless user.image?
-      url = asset_path "assets/default-img-mini.jpg"
+      url = asset_path "default-img-mini.jpg"
     else
       url = user.image.mini.url
     end
