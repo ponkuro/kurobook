@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :comments, only:[:create,:update]
   resources :posts, only:[:index,:new,:create,:edit,:update,:destroy] do
     resources :comments, only:[:edit,:destroy]
@@ -19,6 +20,12 @@ Rails.application.routes.draw do
       get :about, :friend, :following, :followed
     end
   end
+  
+  get 'contact' => 'contact#index'  # 入力画面
+  post 'contact' => 'contact#index'  # 入力画面
+  post 'contact/confirm' => 'contact#confirm'   # 確認画面
+  post 'contact/thanks' => 'contact#thanks'   # 完了画面
+  
   root 'top#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,50 @@
+<div class="contact-container">
+  <h2>送信内容の確認</h2>
+
+  <div class="confirm-field">
+    <div class="field">
+      <div class="form_label">
+        <label>お名前</label>
+      </div>
+      <div class="confirm-content_area">
+        <%= @contact.name %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="form_label">
+        <label>メールアドレス</label>
+      </div>
+      <div class="confirm-content_area">
+        <%= @contact.email %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="form_label">
+        <label>お問い合わせ内容</label>
+      </div>
+      <div class="confirm-content_area">
+        <%= hbr(@contact.message) %>
+      </div>
+    </div>
+    
+    <div class="confirm-btn_area">
+      <p><span class="mark-red">確認</span>　この内容でよろしいですか？</p>
+      <%= form_for @contact, url: contact_url do |f| %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :email %>
+        <%= f.hidden_field :message %>
+        <%= f.submit '入力をやり直す', :name => 'back', :class => 'btn btn-return' %>
+      <% end %>　　　
+    </div>
+      
+  </div>
+  <%= form_for @contact, url: contact_thanks_url do |f| %>
+    <p>送信する場合は次のボタンを押して下さい。</p>
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :email %>
+    <%= f.hidden_field :message %>
+    <%= f.submit '上記内容で送信する', class: "form_submit" %>
+  <% end %>
+      
+</div>
+<%= render "shared/footer" %>

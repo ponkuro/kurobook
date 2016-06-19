@@ -1,0 +1,42 @@
+<div class="contact-container">
+  <h2>送信完了</h2>
+
+  <div class="confirm-field">
+      
+    <h3>下記の内容で送信しました。</h3>
+    <div class="field">
+      <div class="form_label">
+        <label>お名前</label>
+      </div>
+      <div class="confirm-content_area">
+        <%= @contact.name %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="form_label">
+        <label>メールアドレス</label>
+      </div>
+      <div class="confirm-content_area">
+        <%= @contact.email %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="form_label">
+        <label>お問い合わせ内容</label>
+      </div>
+      <div class="confirm-content_area">
+        <%= hbr(@contact.message) %>
+      </div>
+    </div>
+    
+    <div class="thanks-message">
+      <p><span class="mark-green">確認</span>　この後の流れについて</p>
+      <p>
+        お問い合わせ内容につきましては、受付順に確認させて頂いております。<br />
+        内容確認が出来次第、改めてメールにてご連絡させて頂きます。
+      </p>
+    </div>
+      
+  </div>
+      
+</div>
